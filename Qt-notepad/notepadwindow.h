@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include <QTextStream>
+
 //libreria editor de texto plano
 #include <QPlainTextEdit>
 #include <QMenu>
@@ -14,6 +16,12 @@
 #include <QClipboard>
 #include <QKeySequence>
 #include <QMessageBox>
+
+#include <QToolBar>
+#include <QToolButton>
+
+#include <QPushButton>
+#include <QWidget>
 
 class NotepadWindow : public QMainWindow
 {
@@ -28,10 +36,17 @@ private slots:
     void alGuardar();
     void alFuente();
     void alSalir();
-
+    void alAyuda();
+    void herr_cursiva();
+    void herr_negrita();
+    void herr_subrayado();
+    void ali_centro();
+    void ali_izquierda();
+    void ali_derecha();
 
 private:
-    QPlainTextEdit* txtEditor_;
+   // QPlainTextEdit* txtEditor_;
+    QTextEdit* txtEditor_;
     QMenuBar* mainMenu_;
     QMenu* mnuArchivo_;
     QAction* actArchivoAbrir_;
@@ -39,6 +54,17 @@ private:
 
 
     QAction* actArchivoSalir_;
+
+
+    //barra herrma
+    QToolBar* barraMenu_;
+
+    QPushButton* botonnegrita_;
+    QPushButton* botoncursiva_;
+    QPushButton* botonsubrayado_;
+    QPushButton* botonalineocentro_;
+    QPushButton* botonalineoderecha_;
+    QPushButton* botonalineoizquierda_;
 
 
     //QFileDialog*
@@ -53,6 +79,8 @@ private:
 
     QMenu* mnuAyuda_;
     QAction* actAyudaAcercade_;
+
+
 
     QClipboard * portapapeles_;
 
